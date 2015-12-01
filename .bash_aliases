@@ -5,9 +5,6 @@ alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsal='ls -la'
 
-# Backup
-alias backup='cd ~; sh ~/backup.sh'
-
 # Docker
 #alias d='eval "$(docker-machine env dev)"; docker '
 #alias dc='eval "$(docker-machine env dev)"; docker-compose '

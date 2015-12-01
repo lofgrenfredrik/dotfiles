@@ -7,6 +7,7 @@ cp ~/.gitconfig ~/Projects/Repos/dotfiles/
 cp ~/.gitignore_global  ~/Projects/Repos/dotfiles/
 cp ~/.bash_aliases  ~/Projects/Repos/dotfiles/
 cp ~/.bash_profile  ~/Projects/Repos/dotfiles/
+cp ~/.zsh_functions  ~/Projects/Repos/dotfiles/
 
 ## SSH config
 cp ~/.ssh/config ~/Projects/Repos/dotfiles/.ssh/

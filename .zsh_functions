@@ -1,0 +1,7 @@
+# Function that runs backup script and then returns to working directory.
+backup () {
+ curent=$(pwd);
+ cd ~;
+ sh backup.sh;
+ cd $curent;
+}
