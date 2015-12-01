@@ -3,7 +3,7 @@
 ## Call backup function
 
 ```bash
-backup
+$ backup
 ```
 copies all files to repo folder.
 
