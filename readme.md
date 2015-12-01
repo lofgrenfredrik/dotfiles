@@ -1,9 +1,9 @@
 # Backup of my dotfiles
 
-## Backup script
+## Call backup function
 
 ```bash
-sh backup.sh
+backup
 ```
 copies all files to repo folder.
 
