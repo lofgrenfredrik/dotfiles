@@ -1,0 +1,22 @@
+[user]
+	name = lofgrenfredrik
+	email = fr3drik.l@gmail.com
+[push]
+	default = matching
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	fb = checkout -b
+	glog = log --graph --all --oneline --decorate
+	loga = log --oneline --abbrev-commit --all
+[core]
+	#pager = cat
+	excludesfile = /Users/ob0do/.gitignore_global
+[rerere]
+	enabled = true
+[credential]
+	helper = osxkeychain
