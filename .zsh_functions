@@ -1,6 +1,6 @@
 # Function that runs backup script and then returns to working directory.
 backup () {
- cd ~;
- sh backup.sh;
+ cd ~
+ sh backup.sh
  cd -
 }
