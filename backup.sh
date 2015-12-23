@@ -13,7 +13,7 @@ cp ~/.zsh_functions  ~/Projects/Repos/dotfiles/
 cp ~/.ssh/config ~/Projects/Repos/dotfiles/.ssh/
 
 ## oh-my-zsh theme
-cp ~/.oh-my-zsh/themes/ob0do.zsh-theme  ~/Projects/Repos/dotfiles/.oh-my-zsh/themes/
+cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Projects/Repos/dotfiles/.oh-my-zsh/themes/
 
 ## Backup script
 cp ~/backup.sh  ~/Projects/Repos/dotfiles/
