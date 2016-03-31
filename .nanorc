@@ -1,0 +1,33 @@
+# Javascript
+include "~/nanorc/javascript.nanorc"
+include "~/nanorc/js.nanorc"
+
+# PHP
+include "~/nanorc/php.nanorc"
+
+# HTML
+include "~/nanorc/html.nanorc"
+
+# CSS
+include "~/nanorc/html.nanorc"
+
+# JSON
+include "~/nanorc/json.nanorc"
+
+# NANORC
+include "~/nanorc/nanorc.nanorc"
+
+# SH
+include "~/nanorc/sh.nanorc"
+
+# SQL
+include "~/nanorc/sql.nanorc"
+
+# YAML
+include "~/nanorc/yaml.nanorc"
+
+# ZSH
+include "~/nanorc/zsh.nanorc"
+
+# COFFESCRIPT
+include "~/nanorc/coffeescript.nanorc"

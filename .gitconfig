@@ -13,6 +13,8 @@
 	fb = checkout -b
 	glog = log --graph --all --oneline --decorate
 	loga = log --oneline --abbrev-commit --all
+	fls = flow feature start
+	flp = flow feature publish
 [core]
 	#pager = cat
 	excludesfile = /Users/ob0do/.gitignore_global
