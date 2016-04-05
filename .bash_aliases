@@ -14,3 +14,6 @@ alias lsal='ls -la'
 alias d='eval "$(dinghy shellinit)"; docker '
 alias dc='eval "$(dinghy shellinit)"; docker-compose '
 alias dm='docker-machine '
+
+# Git
+alias gclean='git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
