@@ -22,4 +22,4 @@ cp ~/backup.sh  ~/Projects/Repos/dotfiles/
 cp -Rf ~/nanorc  ~/Projects/Repos/dotfiles/
 
 ## Prints message
-printf "\033[1;32m***Backup complete***\033[0m\n"
+printf "\033[1;32m*** Backup complete ***\033[0m\n"
