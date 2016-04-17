@@ -3,9 +3,10 @@
 ## Call backup function
 
 ```bash
-$ backup
+$ backup "commit message"
 ```
-copies all files to repo folder.
+Copies all files to repo folder.
+Adds files to stage, commits & pushes to repo.
 
 Inspired by:
 - https://github.com/michaellopez/dotfiles
