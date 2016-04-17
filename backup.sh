@@ -21,5 +21,11 @@ cp ~/backup.sh  ~/Projects/Repos/dotfiles/
 ## nanorc
 cp -Rf ~/nanorc  ~/Projects/Repos/dotfiles/
 
+## Add, commit & push to Github
+cd ~/Projects/Repos/dotfiles
+git add .
+git commit -m "$1"
+git push -u origin master
+
 ## Prints message
 printf "\033[1;32m*** Backup complete ***\033[0m\n"

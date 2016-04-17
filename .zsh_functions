@@ -1,6 +1,10 @@
 # Function that runs backup script and then returns to working directory.
 backup () {
  cd ~
- sh backup.sh
+ if [[ $1 != '' ]] then
+  sh backup.sh $1
+ else
+  echo 'Commit message needed!!'
+ fi
  cd -
 }
