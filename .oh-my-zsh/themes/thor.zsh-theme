@@ -4,6 +4,10 @@ function get_pwd() {
   echo "${PWD/$HOME/~}"
 }
 
+function branch_icon() {
+  echo "\xE2\x8E\x87"
+}
+
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # PROMPT COLORS
@@ -27,9 +31,9 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 theme_precmd () {
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ${C_BRACKET}'['${GIT_BRANCH}'%b%c%u%B%'${C_BRACKET}']'
+        zstyle ':vcs_info:*' formats ${C_BRACKET}'['${C_PROMPT}$(branch_icon)' '${C_BRACKET}'%b%c%u%B%'${C_BRACKET}']'
     } else {
-        zstyle ':vcs_info:*' formats ${C_BRACKET}'['${GIT_BRANCH}'%b%c%u%B%'${GIT_UNTRAKED}${C_BRACKET}']'
+        zstyle ':vcs_info:*' formats ${C_BRACKET}'['${C_PROMPT}$(branch_icon)' '${C_BRACKET}'%b%c%u%B%'${GIT_UNTRAKED}${C_BRACKET}']'
     }
 
     vcs_info
