@@ -9,3 +9,17 @@ backup () {
  fi
  cd -
 }
+
+# Function that runs backup status script and then returns to working directory.
+backupst () {
+ cd ~
+ sh backupst.sh
+ cd -
+}
+
+# Function that runs backup diff script and then returns to working directory.
+backupdiff () {
+ cd ~
+ sh backupdiff.sh
+ cd -
+}

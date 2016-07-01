@@ -31,3 +31,6 @@ include "~/nanorc/zsh.nanorc"
 
 # COFFESCRIPT
 include "~/nanorc/coffeescript.nanorc"
+
+# MARKDOWN
+include "~/nanorc/markdown.nanorc"
