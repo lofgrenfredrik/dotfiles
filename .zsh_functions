@@ -5,7 +5,7 @@ backup () {
   sh backup.sh $1
  else
   sh backup.sh
-  echo 'Commit message needed for pushing to github!!'
+  echo '\033[1;33mCommit message needed for pushing to github!!\033[0m'
  fi
  cd -
 }
