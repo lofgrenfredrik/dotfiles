@@ -14,8 +14,10 @@ cp ~/.ssh/config  ~/Projects/Repos/dotfiles/.ssh/
 ## oh-my-zsh theme
 cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Projects/Repos/dotfiles/.oh-my-zsh/themes/
 
-## Backup script
+## Backup and status scripts
 cp ~/backup.sh  ~/Projects/Repos/dotfiles/
+cp ~/backupst.sh  ~/Projects/Repos/dotfiles/
+cp ~/backupdiff.sh  ~/Projects/Repos/dotfiles/
 
 ## nanorc
 cp -Rf ~/nanorc  ~/Projects/Repos/dotfiles/
