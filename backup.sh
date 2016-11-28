@@ -6,6 +6,7 @@ cp ~/.gitignore_global  ~/Projects/Repos/dotfiles/
 cp ~/.bash_aliases  ~/Projects/Repos/dotfiles/
 cp ~/.bash_profile  ~/Projects/Repos/dotfiles/
 cp ~/.zsh_functions  ~/Projects/Repos/dotfiles/
+cp ~/.zshrc  ~/Projects/Repos/dotfiles/
 cp ~/.nanorc  ~/Projects/Repos/dotfiles/
 
 ## SSH config

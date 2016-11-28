@@ -23,3 +23,9 @@ backupdiff () {
  sh backupdiff.sh
  cd -
 }
+
+# Make dir and then cd into it
+cdir () {
+ mkdir -p -- "$1" &&
+ cd -P -- "$1"
+}
