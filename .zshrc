@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ob0do/.oh-my-zsh
+export ZSH=/Users/lofgrenfredrik/.oh-my-zsh
 
 # Theme.
 ZSH_THEME="thor"
@@ -27,17 +27,17 @@ export NVM_DIR="$HOME/.nvm"
 
 # Docker
 export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_CERT_PATH=/Users/ob0do/.docker/machine/machines/dinghy
+export DOCKER_CERT_PATH=/Users/lofgrenfredrik/.docker/machine/machines/dinghy
 export DOCKER_TLS_VERIFY=1
-export DOCKER_MACHINE_NAME=dinghy
+export DOCKER_MACHINE_NAME=dinghyexport DOCKER_HOST=tcp://192.168.99.100:2376
 
 # Android
 export ANDROID_HOME=/Users/ob0do/Library/Android
 export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
 
 # Shortcuts
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+if [ -f ~/.zsh_aliases ]; then
+	. ~/.zsh_aliases
 fi
 
 if [ -f ~/.zsh_functions ]; then

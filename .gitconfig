@@ -19,7 +19,7 @@
 	showf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git show --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [core]
 	#pager = cat
-	excludesfile = /Users/ob0do/.gitignore_global
+	excludesfile = /Users/lofgrenfredrik/.gitignore_global
 [rerere]
 	enabled = true
 [credential]
