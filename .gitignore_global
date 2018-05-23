@@ -1,10 +1,31 @@
-*.pyc
-.DS_Store
-.DS_Store?
-._*
+
+# dependencies
+**/node_modules
+
+# testing
+/coverage
+
+# production
+**/build
+**/dist/*
+
+# misc
 Thumbs.db
-.Spotlight-V100
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# git
+.idea/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vscode
 .Trashes
-.idea
-.*~
-/node_modules
+.vscode/
+.history/

@@ -1,9 +1,14 @@
 # Shell
 alias serve='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'
-alias lsa='ls -a'
+alias la='ls -a'
 alias lsl='ls -l'
-alias lsal='ls -la'
+alias ll='ls -laF'
+alias br='git  --no-pager branch'
+
+# Python
+alias python=python3
+alias pip=pip3
 
 # Docker
 #alias d='eval "$(docker-machine env dev)"; docker '
@@ -17,3 +22,7 @@ alias dm='docker-machine '
 
 # Git
 alias gclean='git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
+alias gcleanunmerged='git branch --no-merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -D'
+
+# Android Emulator
+alias emulator='$ANDROID_HOME/tools/emulator'

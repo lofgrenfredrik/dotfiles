@@ -1,11 +1,11 @@
 autoload -Uz vcs_info
 
 function get_pwd() {
-  echo "${PWD/$HOME/~}"
+    echo "${PWD/$HOME/~}"
 }
 
 function branch_icon() {
-  echo "\xE2\x8E\x87"
+    echo "\xE2\x8E\x87"
 }
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
@@ -41,7 +41,7 @@ theme_precmd () {
 
 setopt prompt_subst
 PROMPT='${C_USER}$USER ${C_PROMPT}@ ${C_MACHINE}%m: ${C_PATH}$(get_pwd)/ ${vcs_info_msg_0_}
-${C_TIME}%* ${C_PROMPT} $ '
+${C_TIME}%* ${C_PROMPT}$ '
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd  theme_precmd

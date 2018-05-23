@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/lofgrenfredrik/.oh-my-zsh
 
+# history
+SAVEHIST=100000
+
 # Theme.
 ZSH_THEME="thor"
 
@@ -20,6 +23,10 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Terminal editor
 export EDITOR=/usr/local/bin/nano
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Load nvm
 export NVM_DIR="$HOME/.nvm"
@@ -29,11 +36,13 @@ export NVM_DIR="$HOME/.nvm"
 export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_CERT_PATH=/Users/lofgrenfredrik/.docker/machine/machines/dinghy
 export DOCKER_TLS_VERIFY=1
-export DOCKER_MACHINE_NAME=dinghyexport DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_MACHINE_NAME=dinghy
 
 # Android
-export ANDROID_HOME=/Users/ob0do/Library/Android
-export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 
 # Shortcuts
 if [ -f ~/.zsh_aliases ]; then
@@ -43,3 +52,5 @@ fi
 if [ -f ~/.zsh_functions ]; then
 	. ~/.zsh_functions
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
