@@ -6,6 +6,9 @@ cp ~/.gitignore_global  ~/Projects/Repos/dotfiles/
 cp ~/.zsh_aliases  ~/Projects/Repos/dotfiles/
 cp ~/.zsh_functions  ~/Projects/Repos/dotfiles/
 cp ~/.zshrc  ~/Projects/Repos/dotfiles/
+cp ~/.nanorc  ~/Projects/Repos/dotfiles/
+cp ~/osx-defaults.sh  ~/Projects/Repos/dotfiles/
+cp ~/Brewfile  ~/Projects/Repos/dotfiles/
 
 ## SSH config
 cp ~/.ssh/config  ~/Projects/Repos/dotfiles/.ssh/

@@ -1,5 +1,5 @@
 # Shell
-alias serve='python -m SimpleHTTPServer'
+alias servesimple='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'
 alias la='ls -a'
 alias lsl='ls -l'

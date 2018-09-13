@@ -30,6 +30,14 @@ cdir () {
     cd -P -- "$1"
 }
 
+# Initialize project and bootstrap npm & Git
+initproject () {
+    echo "Initializing project at $(pwd)"
+    git init
+    npm init -y
+    code .
+}
+
 # Reload terminal settings
 refresh () {
     . ~/.zshrc
@@ -59,7 +67,7 @@ function extract {
 }
 
 
-# Make dir and then cd into it
+# Linas checkout branch and mane it
 myp () {
     git fb MYP-$1
 }
