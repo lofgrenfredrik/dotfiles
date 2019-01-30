@@ -66,10 +66,10 @@ function extract {
     fi
 }
 
-
-# Linas checkout branch and mane it
-myp () {
-    git fb MYP-$1
+# Kill a process on port
+killport() {
+    port=$(lsof -n -i4TCP:$1 | grep LISTEN | awk '{ print $2 }')
+    kill -9 $port
 }
 
 # Lints only changed files in repo
