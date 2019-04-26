@@ -1,33 +1,35 @@
 # Files to backup
 
 ## Dotfiles
-cp ~/.gitconfig  ~/Projects/Repos/dotfiles/
-cp ~/.gitignore_global  ~/Projects/Repos/dotfiles/
-cp ~/.zsh_aliases  ~/Projects/Repos/dotfiles/
-cp ~/.zsh_functions  ~/Projects/Repos/dotfiles/
-cp ~/.zshrc  ~/Projects/Repos/dotfiles/
-cp ~/.nanorc  ~/Projects/Repos/dotfiles/
-cp ~/osx-defaults.sh  ~/Projects/Repos/dotfiles/
-cp ~/Brewfile  ~/Projects/Repos/dotfiles/
+cp ~/.gitconfig  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.gitignore_global  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.zsh_aliases  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.zsh_functions  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.zshrc  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.nanorc  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/osx-defaults.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/Brewfile  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/osx.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/cask.sh  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## SSH config
-cp ~/.ssh/config  ~/Projects/Repos/dotfiles/.ssh/
+cp ~/.ssh/config  ~/Repos/lofgrenfredrik/dotfiles/.ssh/
 
 ## oh-my-zsh theme
-cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Projects/Repos/dotfiles/.oh-my-zsh/themes/
+cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Repos/lofgrenfredrik/dotfiles/.oh-my-zsh/themes/
 
 ## Backup and status scripts
-cp ~/backup.sh  ~/Projects/Repos/dotfiles/
-cp ~/backupst.sh  ~/Projects/Repos/dotfiles/
-cp ~/backupdiff.sh  ~/Projects/Repos/dotfiles/
+cp ~/backup.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/backupst.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/backupdiff.sh  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## nanorc
-cp -Rf ~/nanorc  ~/Projects/Repos/dotfiles/
+cp -Rf ~/nanorc  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## Add, commit & push to Github
 if [ "$1" ]
 then
-  cd ~/Projects/Repos/dotfiles
+  cd ~/Repos/lofgrenfredrik/dotfiles
   git add .
   git commit -m "$1"
   git push -u origin master

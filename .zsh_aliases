@@ -4,21 +4,16 @@ alias ports='lsof -Pan -i tcp -i udp'
 alias la='ls -a'
 alias lsl='ls -l'
 alias ll='ls -laF'
-alias br='git  --no-pager branch'
+alias br='git --no-pager branch'
 
 # Python
-alias python=python3
-alias pip=pip3
+# alias python=python3
+# alias pip=pip3
 
 # Docker
 #alias d='eval "$(docker-machine env dev)"; docker '
 #alias dc='eval "$(docker-machine env dev)"; docker-compose '
 #alias dm='docker-machine '
-
-# Dinghy
-alias d='eval "$(dinghy shellinit)"; docker '
-alias dc='eval "$(dinghy shellinit)"; docker-compose '
-alias dm='docker-machine '
 
 # Git
 alias gclean='git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
@@ -26,3 +21,15 @@ alias gcleanunmerged='git branch --no-merged | grep -v "\*" | grep -v master | g
 
 # Android Emulator
 alias emulator='$ANDROID_HOME/tools/emulator'
+
+# Canary with all flags
+alias browsah='open /Applications/Google\ Chrome\ Canary.app --args --disable-web-security --reduce-security-for-testing --allow-running-insecure-content --user-data-dir'export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# MSP
+alias pe="/Users/fredlofg/Repos/viaplay/mtg-cloudformation/msp pe"
+
+# Limes
+alias testlimes="curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ims"
+
+# AWS
+alias resetaws="unset AWS_ACCESS_KEY_ID && unset AWS_SECRET_ACCESS_KEY && echo AWS keys reseted"

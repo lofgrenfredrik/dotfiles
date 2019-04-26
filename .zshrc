@@ -1,5 +1,8 @@
+# Plugins
+plugins=(git z zsh-nvm)
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lofgrenfredrik/.oh-my-zsh
+export ZSH=/Users/fredlofg/.oh-my-zsh
 
 # history
 SAVEHIST=100000
@@ -10,38 +13,22 @@ ZSH_THEME="thor"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Plugins
-plugins=(git z)
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
-export PATH="/usr/local/sbin:$PATH"
-
 # Terminal editor
 export EDITOR=/usr/local/bin/nano
+
+# PATH
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# Docker
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/lofgrenfredrik/.docker/machine/machines/dinghy"
-export DOCKER_MACHINE_NAME="dinghy"
-
-# Android
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
+# AWS Viaplay
+export AWS_REGION=eu-west-1
+export AWS_DEFAULT_REGION=eu-west-1
 
 # Shortcuts
 if [ -f ~/.zsh_aliases ]; then
@@ -53,3 +40,8 @@ if [ -f ~/.zsh_functions ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
+iterm2_print_user_vars() {
+	iterm2_set_user_var nodeVersion $(node -v)
+}

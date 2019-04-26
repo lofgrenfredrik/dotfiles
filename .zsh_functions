@@ -81,5 +81,4 @@ gitlint() {
     echo $FILES
     ARR=$(IFS=', ' read -r -a array <<< echo $FILES)
     echo $ARR
-
 }

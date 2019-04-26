@@ -1,6 +1,6 @@
 [user]
 	name = Fredrik Löfgren
-	email = fredrik.lofgren@weahead.se
+	email = fr3drik.l@gmail.se
 [push]
 	default = matching
 [color]
@@ -17,12 +17,11 @@
 	fb = checkout -b
 	glog = log --graph --all --oneline --decorate
 	loga = log --oneline --abbrev-commit --all
-	fls = flow feature start
-	flp = flow feature publish
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	showf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git show --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [core]
-	excludesfile = /Users/lofgrenfredrik/.gitignore_global
+	excludesfile = /Users/fredlofg/.gitignore_global
 	editor = nano -w
 	# Make `git rebase` safer on macOS
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -39,3 +38,5 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[includeIf "gitdir:~/Repos/viaplay/"]
+    path = ~/Repos/viaplay/.gitconfig

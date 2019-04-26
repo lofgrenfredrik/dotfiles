@@ -1,5 +1,5 @@
 # Shows diff in backup Repo
 
-cd ~/Projects/Repos/dotfiles
+cd ~/Repos/lofgrenfredrik/dotfiles
 git dsf
 cd -

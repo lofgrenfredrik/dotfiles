@@ -1,5 +1,5 @@
 # Shows status in backup Repo
 
-cd ~/Projects/Repos/dotfiles
+cd ~/Repos/lofgrenfredrik/dotfiles
 git st
 cd -
