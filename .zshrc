@@ -2,7 +2,7 @@
 plugins=(git z zsh-nvm)
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/fredlofg/.oh-my-zsh
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 # history
 SAVEHIST=100000
@@ -29,6 +29,7 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 # AWS Viaplay
 export AWS_REGION=eu-west-1
 export AWS_DEFAULT_REGION=eu-west-1
+export PATH="/Applications/s3cmd-1.6.1:$PATH"
 
 # Shortcuts
 if [ -f ~/.zsh_aliases ]; then

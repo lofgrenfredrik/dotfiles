@@ -1,8 +1,11 @@
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 brew tap homebrew/cask-fonts
 
 brew install \
 diff-so-fancy \
-zsh
+zsh \
+git
 
 brew cask install \
 alfred \
@@ -14,4 +17,10 @@ grammarly \
 insomnia \
 itsycal \
 spectacle \
-muzzle
+muzzle \
+slack \
+visual-studio-code \
+bartender \
+appcleaner \
+iterm2 \
+google-chrome
