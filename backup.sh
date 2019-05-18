@@ -7,18 +7,17 @@ cp ~/.zsh_aliases  ~/Repos/lofgrenfredrik/dotfiles/
 cp ~/.zsh_functions  ~/Repos/lofgrenfredrik/dotfiles/
 cp ~/.zshrc  ~/Repos/lofgrenfredrik/dotfiles/
 cp ~/osx.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/cask.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/brew.sh  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## SSH config
 cp ~/.ssh/config  ~/Repos/lofgrenfredrik/dotfiles/.ssh/
 
-## oh-my-zsh theme
+## oh-my-zsh
+cp ~/oh-my-zsh.sh  ~/Repos/lofgrenfredrik/dotfiles/
 cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Repos/lofgrenfredrik/dotfiles/.oh-my-zsh/themes/
 
 ## Backup and status scripts
 cp ~/backup.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/backupst.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/backupdiff.sh  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## Add, commit & push to Github
 if [ "$1" ]
