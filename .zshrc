@@ -26,11 +26,6 @@ export EDITOR=/usr/local/bin/nano
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
-# AWS Viaplay
-export AWS_REGION=eu-west-1
-export AWS_DEFAULT_REGION=eu-west-1
-export PATH="/Applications/s3cmd-1.6.1:$PATH"
-
 # Shortcuts
 if [ -f ~/.zsh_aliases ]; then
 	. ~/.zsh_aliases
@@ -45,6 +40,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
 iterm2_print_user_vars() {
 	iterm2_set_user_var nodeVersion $(node -v)
+	iterm2_set_user_var npmVersion $(npm -v)
 }
 
 export NVM_DIR="$HOME/.nvm"

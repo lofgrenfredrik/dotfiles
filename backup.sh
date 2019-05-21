@@ -10,11 +10,11 @@ cp ~/osx.sh  ~/Repos/lofgrenfredrik/dotfiles/
 cp ~/brew.sh  ~/Repos/lofgrenfredrik/dotfiles/
 
 ## SSH config
-cp ~/.ssh/config  ~/Repos/lofgrenfredrik/dotfiles/.ssh/
+cp ~/.ssh/config  ~/Repos/lofgrenfredrik/dotfiles/ssh/
 
 ## oh-my-zsh
 cp ~/oh-my-zsh.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Repos/lofgrenfredrik/dotfiles/.oh-my-zsh/themes/
+cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Repos/lofgrenfredrik/dotfiles/oh-my-zsh-theme/
 
 ## Backup and status scripts
 cp ~/backup.sh  ~/Repos/lofgrenfredrik/dotfiles/
