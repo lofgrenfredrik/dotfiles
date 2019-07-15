@@ -11,10 +11,23 @@ Host kollarean
 	User flofgren
 	IdentityFile ~/.ssh/id_rsa-reakollen
 
+Host emab-test
+	HostName c1872.cloudnet.cloud
+	User root
+	Port 22
+	IdentityFile ~/.ssh/id_rsa-emab
+
+Host emab-prod
+	HostName c1239.cloudnet.cloud
+	User root
+	Port 22
+	IdentityFile ~/.ssh/id_rsa-emab
+
 Host *
-	ServerAliveInterval 	30
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+	ServerAliveInterval 30
 	ServerAliveCountMax	4
 	PreferredAuthentications publickey
 #	PreferredAuthentications password,keyboard-interactive
-	IdentitiesOnly yes
 	UseKeychain yes

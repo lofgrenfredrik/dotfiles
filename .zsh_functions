@@ -82,3 +82,8 @@ gitlint() {
     ARR=$(IFS=', ' read -r -a array <<< echo $FILES)
     echo $ARR
 }
+
+work() {
+    open -a slack
+    open -a Google\ Chrome/
+}

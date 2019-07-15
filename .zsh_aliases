@@ -5,6 +5,9 @@ alias la='ls -a'
 alias lsl='ls -l'
 alias ll='ls -laF'
 
+alias cleannode='echo "Removing all node_modules recursively" && find . -name "node_modules" -type d -prune -exec rm -rf "{}" +'
+alias rmnm='echo "Removing node_modules" && rm -rf node_modules'
+
 # Git
 alias gclean='git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
 alias br='git --no-pager branch'
