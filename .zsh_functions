@@ -2,9 +2,9 @@
 backup () {
     cd ~
     if [[ $1 != '' ]] then
-        sh backup.sh $1
+        ./backup.sh $1
     else
-        sh backup.sh
+        ./backup.sh
         echo '\033[1;33mCommit message needed for pushing to github!!\033[0m'
     fi
     cd -
@@ -12,14 +12,14 @@ backup () {
 
 # Function that runs backup status script and then returns to working directory.
 backupst () {
-    cd ~/Repos/lofgrenfredrik/dotfiles
+    cd $DOTFILES_REPO_PATH
     git st
     cd -
 }
 
 # Function that runs backup diff script and then returns to working directory.
 backupdiff () {
-    cd ~/Repos/lofgrenfredrik/dotfiles
+    cd $DOTFILES_REPO_PATH
     git dsf
     cd -
 }
@@ -70,17 +70,6 @@ function extract {
 killport() {
     port=$(lsof -n -i4TCP:$1 | grep LISTEN | awk '{ print $2 }')
     kill -9 $port
-}
-
-# Lints only changed files in repo
-#    CSS=$(git status | grep '.css' | awk '{print $NF}') && echo $CSS | sed 's/ /\\\n/g' && node ./node_modules/stylelint/bin/stylelint.js $CSS || true
-#    FILES=$(git status | grep '.js$' | awk '{print $NF}') && echo $FILES | sed 's/ /\\\n/g' || true
-
-gitlint() {
-    FILES=$(git status | grep '.js$' | awk '{print $NF}' | tr '\n' ' ')
-    echo $FILES
-    ARR=$(IFS=', ' read -r -a array <<< echo $FILES)
-    echo $ARR
 }
 
 work() {

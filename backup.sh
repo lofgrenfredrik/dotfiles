@@ -1,28 +1,28 @@
 # Files to backup
 
 ## Dotfiles
-cp ~/.gitconfig  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.gitignore_global  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.zsh_aliases  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.zsh_functions  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.zshrc  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/osx.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/brew.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/.gitconfig  "$DOTFILES_REPO_PATH/"
+cp ~/.gitignore_global  "$DOTFILES_REPO_PATH/"
+cp ~/.zsh_aliases  "$DOTFILES_REPO_PATH/"
+cp ~/.zsh_functions  "$DOTFILES_REPO_PATH/"
+cp ~/.zshrc  "$DOTFILES_REPO_PATH/"
+cp ~/osx.sh  "$DOTFILES_REPO_PATH/"
+cp ~/brew.sh  "$DOTFILES_REPO_PATH/"
 
 ## SSH config
-cp ~/.ssh/config  ~/Repos/lofgrenfredrik/dotfiles/ssh/
+cp ~/.ssh/config  "$DOTFILES_REPO_PATH/ssh/"
 
 ## oh-my-zsh
-cp ~/oh-my-zsh.sh  ~/Repos/lofgrenfredrik/dotfiles/
-cp ~/.oh-my-zsh/themes/thor.zsh-theme  ~/Repos/lofgrenfredrik/dotfiles/oh-my-zsh-theme/
+cp ~/oh-my-zsh.sh  "$DOTFILES_REPO_PATH/"
+cp ~/.oh-my-zsh/themes/thor.zsh-theme  "$DOTFILES_REPO_PATH/oh-my-zsh-theme/"
 
 ## Backup and status scripts
-cp ~/backup.sh  ~/Repos/lofgrenfredrik/dotfiles/
+cp ~/backup.sh  "$DOTFILES_REPO_PATH/"
 
 ## Add, commit & push to Github
 if [ "$1" ]
 then
-  cd ~/Repos/lofgrenfredrik/dotfiles
+  cd "$DOTFILES_REPO_PATH/"
   git add .
   git commit -m "$1"
   git push -u origin master

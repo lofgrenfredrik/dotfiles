@@ -26,6 +26,9 @@ export EDITOR=/usr/local/bin/nano
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
+# Path to dotfiles repo
+export DOTFILES_REPO_PATH="${HOME}/Repos/lofgrenfredrik/dotfiles"
+
 # Shortcuts
 if [ -f ~/.zsh_aliases ]; then
 	. ~/.zsh_aliases
@@ -41,6 +44,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 iterm2_print_user_vars() {
 	iterm2_set_user_var nodeVersion $(node -v)
 	iterm2_set_user_var npmVersion $(npm -v)
+	iterm2_set_user_var nowVersion $(now -v)
 }
 
 export NVM_DIR="$HOME/.nvm"
