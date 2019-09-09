@@ -2,7 +2,8 @@
 	name = Fredrik Löfgren
 	email = fr3drik.l@gmail.com
 [push]
-	default = matching
+	default = simple
+    followTags = true
 [color]
 	ui = auto
 [color "branch"]
