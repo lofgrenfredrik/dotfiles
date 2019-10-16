@@ -40,6 +40,12 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Docker - dinghy
+export DOCKER_HOST=tcp://192.168.64.2:2376
+export DOCKER_CERT_PATH=/Users/lofgrenfredrik/.docker/machine/machines/dinghy
+export DOCKER_TLS_VERIFY=1
+export DOCKER_MACHINE_NAME=dinghy
+
 # https://www.iterm2.com/documentation-shell-integration.html
 # Run: curl -L https://iterm2.com/shell_integration/zsh \
 # -o ~/.iterm2_shell_integration.zsh
@@ -51,5 +57,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 iterm2_print_user_vars() {
 	iterm2_set_user_var nodeVersion $(node -v)
 	iterm2_set_user_var npmVersion $(npm -v)
+	iterm2_set_user_var yarnVersion $(yarn -v)
 	iterm2_set_user_var nowVersion $(now -v)
 }
