@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Shell
 alias servesimple='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'

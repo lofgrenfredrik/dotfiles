@@ -1,17 +1,16 @@
 
-# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# brew tap homebrew/cask-fonts
+brew tap homebrew/cask-fonts
 
-# brew install \
-# diff-so-fancy \
-# zsh \
-# git
+brew install \
+diff-so-fancy \
+zsh \
+git
 
 brew cask install \
 alfred \
-font-fira-code \
-font-hack \
+font-jetbrains-mono \
 linear \
 liteicon \
 grammarly \

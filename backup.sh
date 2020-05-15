@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Files to backup
 
 ## Dotfiles
@@ -6,15 +8,16 @@ cp ~/.gitignore_global  "$DOTFILES_REPO_PATH/"
 cp ~/.zsh_aliases  "$DOTFILES_REPO_PATH/"
 cp ~/.zsh_functions  "$DOTFILES_REPO_PATH/"
 cp ~/.zshrc  "$DOTFILES_REPO_PATH/"
+cp ~/.zsh/pure/pure.zsh  "$DOTFILES_REPO_PATH/"
+
+## OSX setings
 cp ~/osx.sh  "$DOTFILES_REPO_PATH/"
+
+## Brew programs
 cp ~/brew.sh  "$DOTFILES_REPO_PATH/"
 
 ## SSH config
 cp ~/.ssh/config  "$DOTFILES_REPO_PATH/ssh/"
-
-## oh-my-zsh
-cp ~/oh-my-zsh.sh  "$DOTFILES_REPO_PATH/"
-cp ~/.oh-my-zsh/themes/thor.zsh-theme  "$DOTFILES_REPO_PATH/oh-my-zsh-theme/"
 
 ## Backup and status scripts
 cp ~/backup.sh  "$DOTFILES_REPO_PATH/"

@@ -4,30 +4,19 @@ Host github.com
 	IdentityFile ~/.ssh/id_rsa-github-work
 
 Host gitlab.com
+	Hostname altssh.gitlab.com
+	Port 443
 	IdentityFile ~/.ssh/id_rsa-gitlab-work
 
-Host kollarean
-	HostName 94.254.0.180
-	User flofgren
-	IdentityFile ~/.ssh/id_rsa-reakollen
-
-Host emab-test
-	HostName c1872.cloudnet.cloud
-	User root
-	Port 22
-	IdentityFile ~/.ssh/id_rsa-emab
-
-Host emab-prod
-	HostName c1239.cloudnet.cloud
-	User root
-	Port 22
-	IdentityFile ~/.ssh/id_rsa-emab
+Host bitbucket.org
+	HostName bitbucket.org
+	IdentityFile ~/.ssh/id_rsa-bitbucket
 
 Host *
-    AddKeysToAgent yes
-    IdentitiesOnly yes
-	ServerAliveInterval 30
-	ServerAliveCountMax	4
+	IdentitiesOnly yes
+	AddKeysToAgent yes
+	ServerAliveInterval 300
+	ServerAliveCountMax	2
 	PreferredAuthentications publickey
 #	PreferredAuthentications password,keyboard-interactive
 	UseKeychain yes
