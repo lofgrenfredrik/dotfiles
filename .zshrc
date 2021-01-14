@@ -57,10 +57,6 @@ setopt NO_BG_NICE
 setopt NO_HUP
 setopt NO_BEEP
 
-### KEY BINDINGS ###
-bindkey $'^[[A' up-line-or-search    # up arrow
-bindkey $'^[[B' down-line-or-search  # down arrow
-
 ### COLORS ###
 # Activate color for ls
 export CLICOLOR=1
@@ -118,7 +114,7 @@ done
 
 # This adds the default node version to PATH
 if [ ! -z "$DEFAULT_NODE_VER" ]; then
-  export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH"
+  export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
 fi
 
 
@@ -141,12 +137,18 @@ zstyle :prompt:pure:git:arrow color white
 # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 [[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-ZSH_AUTOSUGGEST_STRATEGY=( completion history )
+ZSH_AUTOSUGGEST_STRATEGY=( history completion )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3,underline"
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_AUTOSUGGEST_COMPLETION_IGNORE="cd *"
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 # zsh-z
 # https://github.com/agkozak/zsh-z
 [[ -f ~/.zsh/zsh-z/zsh-z.plugin.zsh ]] && source ~/.zsh/zsh-z/zsh-z.plugin.zsh
+
+# zsh-history-substring-search
+# https://github.com/zsh-users/zsh-history-substring-search
+[[ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh ]] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down

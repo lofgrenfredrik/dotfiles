@@ -4,29 +4,30 @@
 [push]
 	default = simple
 	followTags = true
+[pull]
+	ff = only
 [color]
 	ui = auto
 [color "branch"]
 	current = green reverse
 	local = green
 	remote = yellow
+[diff]
+	tool = diffmerge
 [alias]
 	st = status
 	ci = commit
 	co = checkout
 	br = branch
 	fb = checkout -b
-	glog = log --graph --all --oneline --decorate
-	loga = log --oneline --abbrev-commit --all
-	logc = log --oneline --abbrev-commit --all --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %C(cyan)%s%Creset (%cr) %Cgreen%aN%Creset'
 	lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %C(cyan)%s%Creset (%cr) %Cgreen%aN%Creset' --abbrev-commit --branches
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	showf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git show --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	start = !git init && git commit --allow-empty -m \"chore(repo): root commit\"
+	file = "showf --pretty="" --name-status"
 [core]
+	editor = nano
 	excludesfile = /Users/lofgrenfredrik/.gitignore_global
-	editor = nano -w
-	pager = less -+X
 	# Make `git rebase` safer on macOS
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
@@ -42,10 +43,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[includeIf "gitdir:~/Repos/weahead_repos/"]
-    path = ~/Repos/weahead_repos/.gitconfig
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[includeIf "gitdir:~/Repos/weahead_repos/"]
+    path = ~/Repos/weahead_repos/.gitconfig

@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# Colors
+HIGHLIGHT='\033[1;33m'
+RESET='\033[0m'
+
 # Shell
 alias servesimple='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'
@@ -7,16 +11,13 @@ alias la='ls -a'
 alias lsl='ls -l'
 alias ll='ls -laF'
 
-alias cleannode='echo "Removing all node_modules recursively" && find . -name "node_modules" -type d -prune -exec rm -rf "{}" +'
-alias rmnm='echo "Removing node_modules" && rm -rf node_modules'
+# Cleanse node
+alias cleannode='echo "${HIGHLIGHT}REMOVING ALL node_modules RECURSEVLY${RESET}" && find . -name "node_modules" -type d -prune -exec rm -rf "{}" +'
+alias rmnm='echo "${HIGHLIGHT}REMOVING node_modules${RESET}" && rm -rf node_modules'
 
 # Git
-alias gclean='git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
-alias br='git --no-pager branch'
-
-# Python
-# alias python=python3
-# alias pip=pip3
-
-# Canary with all flags
-alias browsah='open /Applications/Google\ Chrome\ Canary.app --args --disable-web-security --reduce-security-for-testing --allow-running-insecure-content --user-data-dir'export PATH="/usr/local/opt/ruby/bin:$PATH"
+alias gclean='echo "${HIGHLIGHT}REMOVING MERGED BRANCHES${RESET}" && git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
+alias gpull='echo "${HIGHLIGHT}PULLING MASTER & DEVELOP${RESET}" && git co master && git pull && git co develop && git pull -p'
+alias gdeveloppush='echo "${HIGHLIGHT}PUSH DEVELOP${RESET}" && git co develop && git push'
+alias gmasterpush='echo "${HIGHLIGHT}PUSH MASTER${RESET}" && git co master && git push'
+alias colortest='echo "${HIGHLIGHT}TESTING COLOR TEXT${RESET} no color"'
