@@ -20,6 +20,9 @@ HISTSIZE=2000
 # dont't add to history if first character is a space
 setopt HIST_IGNORE_SPACE
 
+# share history across multiple zsh sessions
+setopt SHARE_HISTORY
+
 # append to history
 setopt APPEND_HISTORY
 
