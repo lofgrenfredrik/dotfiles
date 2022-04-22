@@ -26,6 +26,7 @@
 	showf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git show --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	start = !git init && git commit --allow-empty -m \"chore(repo): root commit\"
 	file = "showf --pretty="" --name-status"
+	gone = ! "git fetch --all -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
 [core]
 	editor = nano
 	excludesfile = /Users/lofgrenfredrik/.gitignore_global

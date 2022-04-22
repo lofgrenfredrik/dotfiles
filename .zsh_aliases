@@ -5,10 +5,7 @@ HIGHLIGHT='\033[1;33m'
 RESET='\033[0m'
 
 # Shell
-alias servesimple='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'
-alias la='ls -a'
-alias lsl='ls -l'
 alias ll='ls -laF'
 
 # Cleanse node
@@ -16,8 +13,7 @@ alias cleannode='echo "${HIGHLIGHT}REMOVING ALL node_modules RECURSIVELY${RESET}
 alias rmnm='echo "${HIGHLIGHT}REMOVING node_modules${RESET}" && rm -rf node_modules'
 
 # Git
-alias gclean='echo "${HIGHLIGHT}REMOVING MERGED BRANCHES${RESET}" && git branch --merged | grep -v "\*" | grep -v master | grep -v develop | xargs -n 1 git branch -d'
+alias gclean="echo '${HIGHLIGHT}REMOVING BRANCHES${RESET}' && git gone"
 alias gpull='echo "${HIGHLIGHT}PULLING MASTER & DEVELOP${RESET}" && git co master && git pull && git co develop && git pull -p'
 alias gdeveloppush='echo "${HIGHLIGHT}PUSH DEVELOP${RESET}" && git co develop && git push -u origin develop'
 alias gmasterpush='echo "${HIGHLIGHT}PUSH MASTER${RESET}" && git co master && git push -u origin master'
-alias colortest='echo "${HIGHLIGHT}TESTING COLOR TEXT${RESET} no color"'

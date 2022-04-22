@@ -1,43 +1,9 @@
 #!/bin/zsh
 
-# Function that runs backup script and then returns to working directory.
-backup () {
-    cd ~
-    if [[ $1 != '' ]] then
-        ./backup.sh $1
-    else
-        ./backup.sh
-        echo '\033[1;33mCommit message needed for pushing to github!!\033[0m'
-    fi
-    cd -
-}
-
-# Function that runs backup status script and then returns to working directory.
-backupst () {
-    cd $DOTFILES_REPO_PATH
-    git st
-    cd -
-}
-
-# Function that runs backup diff script and then returns to working directory.
-backupdiff () {
-    cd $DOTFILES_REPO_PATH
-    git dsf
-    cd -
-}
-
 # Make dir and then cd into it
 cdir () {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
-}
-
-# Initialize project and bootstrap npm & Git
-initproject () {
-    echo "Initializing project at $(pwd)"
-    git init
-    npm init -y
-    code .
 }
 
 # Reload terminal settings
@@ -72,9 +38,4 @@ function extract {
 killport() {
     port=$(lsof -n -i4TCP:$1 | grep LISTEN | awk '{ print $2 }')
     kill -9 $port
-}
-
-work() {
-    open -a slack
-    open -a Google\ Chrome/
 }
