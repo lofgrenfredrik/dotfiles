@@ -8,7 +8,7 @@ cdir () {
 
 # Reload terminal settings
 refresh () {
-    . ~/.zshrc
+    source ~/.zshrc
 }
 
 # Extract any time of compressed file
