@@ -100,8 +100,6 @@ fi
 # # https://blog.yo1.dog/better-nvm-lazy-loading/
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # # This lazy loads nvm
 nvm() {
