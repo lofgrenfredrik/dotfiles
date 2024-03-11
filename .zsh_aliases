@@ -14,6 +14,6 @@ alias rmnm='echo "${HIGHLIGHT}REMOVING node_modules${RESET}" && rm -rf node_modu
 
 # Git
 alias gclean="echo '${HIGHLIGHT}REMOVING BRANCHES${RESET}' && git gone"
-alias gpull='echo "${HIGHLIGHT}PULLING MASTER & DEVELOP${RESET}" && git co master && git pull && git co develop && git pull -p'
 alias gdeveloppush='echo "${HIGHLIGHT}PUSH DEVELOP${RESET}" && git co develop && git push -u origin develop'
 alias gmasterpush='echo "${HIGHLIGHT}PUSH MASTER${RESET}" && git co master && git push -u origin master'
+alias mainpush='echo "${HIGHLIGHT}PUSH MAIN${RESET}" && git co main && git push -u origin main'

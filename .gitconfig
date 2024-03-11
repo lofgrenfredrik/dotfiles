@@ -22,13 +22,13 @@
 	fb = checkout -b
 	lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %C(white)%s%Creset %C(white dim)(%cr)%Creset %C(brightgreen)%aN%Creset %C(magenta)%aE%Creset' --abbrev-commit --branches
 	lgb = log --color --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %C(white)%s%Creset - %C(brightgreen)%aN%Creset  %C(magenta)%aE%Creset' --abbrev-commit --date=format-local:'%Y-%m-%d'
-	lgdate = log --color --date=format-local:'%Y-%m-%d' --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %C(white)%s%Creset - %C(brightgreen)%ad%Creset  %C(magenta)%aE%Creset' --abbrev-commit
+	lgd = log --color --date=format-local:'%Y-%m-%d' --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %C(white)%s%Creset - %C(brightgreen)%ad%Creset  %C(magenta)%aE%Creset' --abbrev-commit
 
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	showf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git show --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	start = !git init && git commit --allow-empty -m \"chore(repo): root commit\"
 	file = "showf --pretty="" --name-status"
-	gone = ! "git fetch --all -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
+	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
 [core]
 	editor = nano
 	excludesfile = /Users/lofgrenfredrik/.gitignore_global

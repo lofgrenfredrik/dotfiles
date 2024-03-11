@@ -1,8 +1,5 @@
 # Most setting from https://scriptingosx.com/2019/11/new-book-release-day-moving-to-zsh/
 
-# Path to dotfiles repo
-export DOTFILES_REPO_PATH="${HOME}/Repos/lofgrenfredrik/dotfiles"
-
 # Terminal editor
 export EDITOR=/usr/bin/nano
 
