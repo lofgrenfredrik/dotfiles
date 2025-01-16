@@ -120,7 +120,7 @@ fi
 
 # ### PURE PROMPT ###
 # # https://github.com/sindresorhus/pure
-fpath+=$HOME/.zsh/pure
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -134,7 +134,7 @@ zstyle :prompt:pure:git:arrow color white
 # ### PLUG-INS ###
 # # zsh-autosuggestions
 # # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-[[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=( history completion )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3,underline"
@@ -142,12 +142,8 @@ ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
-# # zsh-z
-# https://github.com/agkozak/zsh-z
-[[ -f ~/.zsh/zsh-z/zsh-z.plugin.zsh ]] && source ~/.zsh/zsh-z/zsh-z.plugin.zsh
-
 # # zsh-history-substring-search
 # # https://github.com/zsh-users/zsh-history-substring-search
-[[ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh ]] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
