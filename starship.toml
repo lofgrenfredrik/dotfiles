@@ -1,6 +1,6 @@
 format = '''
-$directory$git_branch$git_status$git_state $status
-$character
+$username$directory$git_branch$git_status$git_state $status
+$character[](bold)
 '''
 
 [directory]
