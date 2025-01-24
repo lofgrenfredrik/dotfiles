@@ -116,34 +116,34 @@ if [ ! -z "$DEFAULT_NODE_VER" ]; then
   export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
 fi
 
+eval "$(starship init zsh)"
 
+# # ### PURE PROMPT ###
+# # # https://github.com/sindresorhus/pure
+# fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# autoload -U promptinit; promptinit
+# prompt pure
 
-# ### PURE PROMPT ###
-# # https://github.com/sindresorhus/pure
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-prompt pure
+# # Pure prompt styling
+# zstyle :prompt:pure:path color green
+# zstyle :prompt:pure:host color yellow
+# zstyle :prompt:pure:user color magenta
+# zstyle :prompt:pure:git:branch color cyan
+# zstyle :prompt:pure:git:arrow color white
 
-# Pure prompt styling
-zstyle :prompt:pure:path color green
-zstyle :prompt:pure:host color yellow
-zstyle :prompt:pure:user color magenta
-zstyle :prompt:pure:git:branch color cyan
-zstyle :prompt:pure:git:arrow color white
+# # ### PLUG-INS ###
+# # # zsh-autosuggestions
+# # # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ### PLUG-INS ###
-# # zsh-autosuggestions
-# # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH_AUTOSUGGEST_STRATEGY=( history completion )
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3,underline"
+# ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
+# ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
+# ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
-ZSH_AUTOSUGGEST_STRATEGY=( history completion )
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3,underline"
-ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
-ZSH_AUTOSUGGEST_USE_ASYNC="true"
-
-# # zsh-history-substring-search
-# # https://github.com/zsh-users/zsh-history-substring-search
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# # # zsh-history-substring-search
+# # # https://github.com/zsh-users/zsh-history-substring-search
+# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
