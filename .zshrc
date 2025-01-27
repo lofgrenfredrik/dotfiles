@@ -116,6 +116,7 @@ if [ ! -z "$DEFAULT_NODE_VER" ]; then
   export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
 fi
 
+# https://starship.rs/config/
 eval "$(starship init zsh)"
 
 # # ### PURE PROMPT ###
