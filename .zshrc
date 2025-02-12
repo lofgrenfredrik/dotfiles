@@ -93,12 +93,12 @@ if [ -f ~/.zsh_functions ]; then
 	. ~/.zsh_functions
 fi
 
-# ### NVM ###
-# # https://blog.yo1.dog/better-nvm-lazy-loading/
+### NVM ###
+# https://blog.yo1.dog/better-nvm-lazy-loading/
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 
-# # This lazy loads nvm
+# This lazy loads nvm
 nvm() {
   unset -f nvm
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
@@ -111,26 +111,24 @@ while [ -s "$NVM_DIR/alias/$DEFAULT_NODE_VER" ] && [ ! -z "$DEFAULT_NODE_VER" ];
   DEFAULT_NODE_VER="$(<"$NVM_DIR/alias/$DEFAULT_NODE_VER")"
 done
 
-# # This adds the default node version to PATH
+# This adds the default node version to PATH
 if [ ! -z "$DEFAULT_NODE_VER" ]; then
   export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
 fi
 
-# https://starship.rs/config/
-eval "$(starship init zsh)"
+### PURE PROMPT ###
+# https://github.com/sindresorhus/pure
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 
-# # ### PURE PROMPT ###
-# # # https://github.com/sindresorhus/pure
-# fpath+=("$(brew --prefix)/share/zsh/site-functions")
-# autoload -U promptinit; promptinit
-# prompt pure
-
-# # Pure prompt styling
-# zstyle :prompt:pure:path color green
-# zstyle :prompt:pure:host color yellow
-# zstyle :prompt:pure:user color magenta
-# zstyle :prompt:pure:git:branch color cyan
-# zstyle :prompt:pure:git:arrow color white
+# Pure prompt styling
+zstyle :prompt:pure:path color green
+zstyle :prompt:pure:host color yellow
+zstyle :prompt:pure:user color magenta
+zstyle :prompt:pure:git:branch color cyan
+zstyle :prompt:pure:git:arrow color white
+zstyle :prompt:pure:git:action color yellow
 
 ### PLUG-INS ###
 # zsh-autosuggestions
