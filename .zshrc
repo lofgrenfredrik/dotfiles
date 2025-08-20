@@ -116,6 +116,22 @@ if [ ! -z "$DEFAULT_NODE_VER" ]; then
   export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
 fi
 
+# Force terminal colors
+autoload -U colors && colors
+
+# Set custom ANSI colors
+print -n "\e]4;0;#000000\a"  # Black
+print -n "\e]4;1;#fd3030\a"  # Red
+print -n "\e]4;2;#89ff83\a"  # Green
+print -n "\e]4;3;#fffc63\a"  # Yellow
+print -n "\e]4;4;#437eff\a"  # Blue
+print -n "\e]4;5;#c88aff\a"  # Magenta
+print -n "\e]4;6;#4bfafd\a"  # Cyan
+print -n "\e]4;7;#ffffff\a"  # White
+
+# Reset and apply colors
+export TERM=xterm-256color
+
 ### PURE PROMPT ###
 # https://github.com/sindresorhus/pure
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
@@ -146,3 +162,5 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+export PATH="/Users/lofgrenfredrik/.lando/bin:$PATH"; #landopath
