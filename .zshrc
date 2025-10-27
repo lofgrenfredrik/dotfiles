@@ -1,61 +1,64 @@
 # Most setting from https://scriptingosx.com/2019/11/new-book-release-day-moving-to-zsh/
+# https://github.com/dreamsofautonomy/zensh/blob/main/.zshrc
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Terminal editor
-export EDITOR=/usr/bin/nano
+# export EDITOR=/usr/bin/nano
 
 # prevent duplicate entries in path
 declare -U path
 
 # PATH
-path+=~/bin
+#path+=~/bin
 
-### HISTORY ###
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-SAVEHIST=5000
-HISTSIZE=2000
+### Homebrew ###
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-# dont't add to history if first character is a space
-setopt HIST_IGNORE_SPACE
+### Zinit ###
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+# Add in Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# share history across multiple zsh sessions
-setopt SHARE_HISTORY
+# Load completions
+autoload -Uz compinit && compinit
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# append to history
-setopt APPEND_HISTORY
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
 
-# adds commands as they are typed, not at shell exit
-setopt INC_APPEND_HISTORY
-
-# expire duplicates first
-setopt HIST_EXPIRE_DUPS_FIRST
-
-# do not store duplications
-setopt HIST_IGNORE_DUPS
-
-#ignore duplicates when searching
-setopt HIST_FIND_NO_DUPS
-
-# removes blank lines from history
-setopt HIST_REDUCE_BLANKS
-
-# Verify before run
-setopt HIST_VERIFY
-
-
-### MISC SETTINGS ###
-# Globbing case-insensitive
-setopt NO_CASE_GLOB
-
-# List globb matches
-setopt GLOB_COMPLETE
-
-# Tab selection option
-setopt AUTO_MENU
-
-# don't play sound, SILENCIO!!
-setopt NO_BG_NICE
-setopt NO_HUP
-setopt NO_BEEP
+# Shell integrations
+eval "$(fzf --zsh)"
 
 ### COLORS ###
 # Activate color for ls
@@ -63,104 +66,54 @@ export CLICOLOR=1
 # Custom colors
 export LSCOLORS=gxfxcxhxbxegedabagacad
 
-### COMPLETION ###
-# Match colors in LSCOLORS
-zstyle ':completion:*:default' list-colors 'di=36:ln=35:so=32:pi=37:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
-
-# case insensitive path-completion
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
-
-# partial completion suggestions
-zstyle ':completion:*' list-suffixes
-zstyle ':completion:*' expand prefix suffix
-
-# list with colors
-zstyle ':completion:*' list-colors ''
-
-# load completion
-autoload -Uz compinit && compinit
-
-# load bashcompinit for some old bash completions
-autoload bashcompinit && bashcompinit
-
-# Alias
-if [ -f ~/.zsh_aliases ]; then
-	. ~/.zsh_aliases
-fi
-
-# Functions
-if [ -f ~/.zsh_functions ]; then
-	. ~/.zsh_functions
-fi
-
 ### NVM ###
 # https://blog.yo1.dog/better-nvm-lazy-loading/
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 
-# This lazy loads nvm
-nvm() {
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-  nvm $@
-}
+### HISTORY ###
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+# dont't add to history if first character is a space
+setopt HIST_IGNORE_SPACE
+# share history across multiple zsh sessions
+setopt SHARE_HISTORY
+# append to history
+setopt APPEND_HISTORY
+# adds commands as they are typed, not at shell exit
+setopt INC_APPEND_HISTORY
+# expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+# do not store duplications
+setopt HIST_IGNORE_DUPS
+#ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+# removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+# Verify before run
+setopt HIST_VERIFY
 
-# # This resolves the default node version
-DEFAULT_NODE_VER="$( (< "$NVM_DIR/alias/default" || < ~/.nvmrc) 2> /dev/null)"
-while [ -s "$NVM_DIR/alias/$DEFAULT_NODE_VER" ] && [ ! -z "$DEFAULT_NODE_VER" ]; do
-  DEFAULT_NODE_VER="$(<"$NVM_DIR/alias/$DEFAULT_NODE_VER")"
-done
+### MISC SETTINGS ###
+# Globbing case-insensitive
+setopt NO_CASE_GLOB
+# List globb matches
+setopt GLOB_COMPLETE
+# Tab selection option
+setopt AUTO_MENU
+# don't play sound, SILENCIO!!
+setopt NO_BG_NICE
+setopt NO_HUP
+setopt NO_BEEP
 
-# This adds the default node version to PATH
-if [ ! -z "$DEFAULT_NODE_VER" ]; then
-  export PATH="$NVM_DIR/versions/node/v${DEFAULT_NODE_VER#v}/bin:$PATH:/usr/local/sbin"
+### Alias ###
+if [ -f ~/.zsh_aliases ]; then
+	. ~/.zsh_aliases
 fi
 
-# Force terminal colors
-autoload -U colors && colors
-
-# Set custom ANSI colors
-print -n "\e]4;0;#000000\a"  # Black
-print -n "\e]4;1;#fd3030\a"  # Red
-print -n "\e]4;2;#89ff83\a"  # Green
-print -n "\e]4;3;#fffc63\a"  # Yellow
-print -n "\e]4;4;#437eff\a"  # Blue
-print -n "\e]4;5;#c88aff\a"  # Magenta
-print -n "\e]4;6;#4bfafd\a"  # Cyan
-print -n "\e]4;7;#ffffff\a"  # White
-
-# Reset and apply colors
-export TERM=xterm-256color
-
-### PURE PROMPT ###
-# https://github.com/sindresorhus/pure
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-prompt pure
-
-# Pure prompt styling
-zstyle :prompt:pure:path color green
-zstyle :prompt:pure:host color yellow
-zstyle :prompt:pure:user color magenta
-zstyle :prompt:pure:git:branch color cyan
-zstyle :prompt:pure:git:arrow color white
-zstyle :prompt:pure:git:action color yellow
-
-### PLUG-INS ###
-# zsh-autosuggestions
-# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-ZSH_AUTOSUGGEST_STRATEGY=( history completion )
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3,underline"
-ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
-ZSH_AUTOSUGGEST_USE_ASYNC="true"
-
-# zsh-history-substring-search
-# https://github.com/zsh-users/zsh-history-substring-search
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+### Functions ###
+if [ -f ~/.zsh_functions ]; then
+	. ~/.zsh_functions
+fi
 
 export PATH="/Users/lofgrenfredrik/.lando/bin:$PATH"; #landopath
