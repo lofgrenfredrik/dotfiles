@@ -9,3 +9,13 @@ brew install fzf
 brew install neovim
 brew install ripgrep
 ```
+
+## Apps
+- appcleaner
+- calibre
+- insomnia
+- itsycal
+- obsidian
+- notion
+- raycast
+- vscode
