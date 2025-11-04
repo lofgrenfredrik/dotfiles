@@ -32,7 +32,7 @@
 	file = "showf --pretty="" --name-status"
 	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
 [core]
-	editor = nano
+	# editor = nano
 	excludesfile = /Users/lofgrenfredrik/.gitignore_global
 	# Make `git rebase` safer on macOS
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -55,5 +55,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[includeIf "gitdir:~/Repos/weahead_repos/"]
-    path = ~/Repos/weahead_repos/.gitconfig
