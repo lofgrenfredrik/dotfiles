@@ -17,6 +17,7 @@ brew install --cask visual-studio-code
 brew install fzf
 brew install neovim
 brew install ripgrep
+brew install diff-so-fancy
 ```
 
 ## Apps
