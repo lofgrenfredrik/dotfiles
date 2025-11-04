@@ -22,3 +22,4 @@ brew install ripgrep
 ## Apps
 - https://www.lazyvim.org/installation
 - https://docs.brew.sh/Installation
+- https://github.com/dwarvesf/hidden
