@@ -1,0 +1,15 @@
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  IdentityFile ~/.ssh/id_ed25519-github
+
+Host sj.ghe.com
+  IdentityFile ~/.ssh/id_ed25519-github-SJ
+
+Host *
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+  PreferredAuthentications publickey
+  IgnoreUnknown UseKeychain

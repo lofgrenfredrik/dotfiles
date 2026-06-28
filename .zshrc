@@ -9,13 +9,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Terminal editor
-# export EDITOR=/usr/bin/nano
+export EDITOR=/usr/bin/nano
 
 # prevent duplicate entries in path
 declare -U path
+set -o vi
 
 # PATH
-#path+=~/bin
+path=("$HOME/.local/bin" $path)
+
+# Config PATH
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ### Homebrew ###
 if [[ -f "/opt/homebrew/bin/brew" ]] then
@@ -66,11 +70,6 @@ export CLICOLOR=1
 # Custom colors
 export LSCOLORS=gxfxcxhxbxegedabagacad
 
-### NVM ###
-# https://blog.yo1.dog/better-nvm-lazy-loading/
-export NVM_DIR="$HOME/.nvm"
-source $(brew --prefix nvm)/nvm.sh
-
 ### HISTORY ###
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 HISTSIZE=5000
@@ -116,4 +115,5 @@ if [ -f ~/.zsh_functions ]; then
 	. ~/.zsh_functions
 fi
 
-export PATH="/Users/lofgrenfredrik/.lando/bin:$PATH"; #landopath
+eval "$(zoxide init zsh --cmd cd)"
+eval "$(mise activate zsh)"

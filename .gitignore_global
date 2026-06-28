@@ -28,5 +28,5 @@ pids
 .vscode/
 .history/
 
-# now
-now-secrets.json
+# mise
+mise.toml
