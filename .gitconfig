@@ -57,5 +57,9 @@
 	required = true
 [init]
 	defaultBranch = main
+
+## SJ rules
 [includeIf "gitdir:~/Repos/SJ/"]
  path = ~/Repos/SJ/.gitconfig
+[url "sj@sj.ghe.com:"]
+	insteadOf = https://sj.ghe.com/
